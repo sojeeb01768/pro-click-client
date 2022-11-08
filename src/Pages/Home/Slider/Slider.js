@@ -8,25 +8,25 @@ import img6 from '../../../assets/images/slider/6.jpg';
 
 const Slider = () => {
     return (
-        <div>
+        <div className='my-5'>
             <div className="carousel w-full">
-                <div id="item1" className="carousel-item w-5/6 ">
-                    <img src={img1} alt='' className="w-full" />
+                <div id="item1" className="carousel-item w-full ">
+                    <img src={img1} alt='' className="w-full rounded-xl" />
                 </div>
                 <div id="item2" className="carousel-item w-full">
-                    <img src={img2} alt='' className="w-full" />
+                    <img src={img2} alt='' className="w-full rounded-xl" />
                 </div>
                 <div id="item3" className="carousel-item w-full">
-                    <img src={img3} alt='' className="w-full" />
+                    <img src={img3} alt='' className="w-full rounded-xl" />
                 </div>
                 <div id="item4" className="carousel-item w-full">
-                    <img src={img4} alt='' className="w-full" />
+                    <img src={img4} alt='' className="w-full rounded-xl" />
                 </div>
                 <div id="item5" className="carousel-item w-full">
-                    <img src={img5} alt='' className="w-full" />
+                    <img src={img5} alt='' className="w-full rounded-xl" />
                 </div>
                 <div id="item6" className="carousel-item w-full">
-                    <img src={img6} alt='' className="w-full" />
+                    <img src={img6} alt='' className="w-full rounded-xl" />
                 </div>
             </div>
             <div className="flex justify-center w-full py-2 gap-2">

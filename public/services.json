@@ -1,37 +1,43 @@
 [
     {
         "service_name": "Football Photography",
-        "price": 25000,
+        "services_id": "01",
+        "price": 3200,
         "image": "https://media.istockphoto.com/id/1202466316/photo/football-player-in-the-stadium.jpg?s=612x612&w=0&k=20&c=Ksh1P1leYpL3Y3-hBlUasljBV0W0MOihtKtfhOajsGw=",
         "details": "With an average of 1000 finished images per Match Day Shoot, your price per photo is just $2.00. We accept team orders-one charge for the complete collection. You distribute to the entire team and split the costs.Team photo companies charge families up to $40 for one staged close-up of your child and a team photo. DL Action Sport Photography provides your team with 100 ACTION shots and costs less! "
     },
     {
         "service_name": "Cricket Photography",
-        "price": 25000,
+        "services_id": "02",
+        "price": 2900,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9xAc5Apicjvo8f4n5L1LSjpEncC55YH_4Kg&usqp=CAU",
         "details": "Complete Game Day coverage for your team. my team arrives 1 hour before game time to capture pre-game warm-ups, field introductions and complete game and post-game coverage of team and individual players. average 1000 photos click per match cost 1000$ per match"
     },
     {
         "service_name": "Basketball Photography",
-        "price": 25000,
+        "services_id": "03",
+        "price": 2100,
         "image": "https://img.freepik.com/free-photo/black-man-doing-sports-playing-basketball-sunrise-jumping-silhouette_285396-1440.jpg?w=2000",
         "details": "Unlike the team photo companies, we allows you to choose which images you want and enables you to build your own collection of your team's and child's best ACTION shots. We supply you with a HIGH RESOLUTION image (minimum 5 MB) that is perfect for social media and many print options available on our site this package cost 600$ per match "
     },
     {
         "service_name": "swim Photography",
-        "price": 25000,
+        "services_id": "04",
+        "price": 1200,
         "image": "https://media.istockphoto.com/id/465383082/photo/female-swimmer-at-the-swimming-pool.jpg?s=612x612&w=0&k=20&c=tcTwN2rTvUBK4wddan_GUCxrXX6bBoU-hyrVMvmT0BM=",
         "details": "Complete Game Day coverage for your team. my team arrives 1 hour before game time to capture pre-game warm-ups, field introductions and complete game and post-game coverage of team and individual players. average 1000 photos click per match cost 400$ per match"
     },
     {
         "service_name": "Archery Photography",
-        "price": 25000,
+        "services_id": "05",
+        "price": 2500,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFrxkBwtDrgN_ZUPDz_sRLIOVulYE6TcpVWQ&usqp=CAU",
         "details": "PACKAGES- Bold ($40) - Choice of two individual 5x7 prints, one 5x7 of the team, and 8 wallet-size prints. Dynamic ($52) - Choice of three individual 5x7 prints, one 5x7 of the team, 8 wallet-size prints, and two complementary digital downloads. Elite ($59) - Choice of three 5x7 prints, choice of two 8x10 prints, 8 wallet size, and three complementary digital downloads "
     },
     {
         "service_name": "Racing Photography",
-        "price": 25000,
+        "services_id": "06",
+        "price": 3700,
         "image": "https://media.istockphoto.com/id/181054095/photo/leading-the-race.jpg?s=612x612&w=0&k=20&c=r6Je63RAnDpobznz9r5pzCLPIHWTcsIUU7ooLQoA8Zg=",
         "details": "Car racing photographers and videographers will be earning between $50 and $200 per photo and $250 to $600 per video. To earn more than $600, you need to be a professional auto racing photographer. The main thing that decides the salary is whether it is an actual event or a promotional video.The average salary of an auto racing photographer is $52,000 per year. Photographers earn $30,000 or less. The average auto racing photographer salary is $52,000 per year. The highest paid auto racing photographers make $100,000 per year."
     }
