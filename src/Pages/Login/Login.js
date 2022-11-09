@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { FaGoogle , FaGithub} from "react-icons/fa";
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
-    const { logIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const { logIn, providerPopUpLogin } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -16,9 +20,27 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                navigate('/')
             })
-            .then(err => console.error(err))
+            .catch(err => console.error(err))
 
+    }
+
+    const handleGithubSignIn = ()=>{
+        
+    }
+
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGooleSignIn = () => {
+        providerPopUpLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate('/')
+            })
+            .catch(err => console.error(err))
     }
 
     return (
@@ -46,7 +68,11 @@ const Login = () => {
                             </label> */}
                         </div>
                         <div className="form-control mt-6">
-                            <input className='btn btn-primary' type="submit" value="Login" />
+                            <input className='btn btn-primary mb-5' type="submit" value="Login" />
+                            <button onClick={handleGooleSignIn} className="btn btn-outline"><FaGoogle></FaGoogle><span className='ml-2'> Sign in With Google</span></button>
+                            <button onClick={handleGithubSignIn} className="btn btn-outline"><FaGithub></FaGithub><span className='ml-2'> Sign in With GitHub</span></button>
+
+
 
                         </div>
                     </form>

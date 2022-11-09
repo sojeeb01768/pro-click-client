@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.jpeg';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { FaGoogle, FaUser } from "react-icons/fa";
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(err => console.error(err))
+    }
 
     const menuIitems = <>
         <li className='font-semibold'><Link to="/">Home</Link></li>
-        <li className='font-semibold'><Link to="login">Login</Link></li>
         <li className='font-semibold'><Link to="allreviews">All review</Link></li>
         <li className='font-semibold'><Link to="blog">Blog</Link></li>
 
@@ -28,13 +38,32 @@ const Header = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
+
                 <ul className="menu menu-horizontal p-0">
                     {menuIitems}
                 </ul>
+
             </div>
-            {/* <div className="navbar-end">
-                <Link className="btn btn-success">Get started</Link>
-            </div> */}
+            <div className="navbar-end">
+
+                {
+                    user?.uid ?
+                        <>
+                            <span className='ml-2'>{user?.displayName}</span>
+                            <button onClick={handleLogOut} className='btn ml-2'>Logout</button>
+                        </>
+                        :
+                        <>
+                            <Link to='/login'><button className='btn'>Login</button></Link>
+
+                        </>
+                }
+
+                {user?.photoURL ?
+                    <img className='h-10 rounded-full ml-2' src={user?.photoURL} alt="" />
+                    : <FaUser className='ml-2'></FaUser>
+                }
+            </div>
         </div>
     );
 };
