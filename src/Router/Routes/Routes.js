@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AllUserReviews from "../../Pages/AllUserReviews/AllUserReviews";
+import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
@@ -21,17 +22,21 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: '/registers',
+        path: '/register',
         element: <Register></Register>
       },
       {
         path: '/review/:id',
         element: <Review></Review>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://sports-photography-server.vercel.app/services/${params.id}`)
       },
       {
-        path:'/allreviews',
+        path: '/allreviews',
         element: <AllUserReviews></AllUserReviews>
+      },
+      {
+        path:'/blog',
+        element:<Blog></Blog>
       }
 
     ]
