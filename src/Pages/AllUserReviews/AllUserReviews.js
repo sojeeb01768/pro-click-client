@@ -10,7 +10,7 @@ const AllUserReviews = () => {
 
 
     useEffect(() => {
-        fetch('https://sports-photography-server.vercel.app/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setAllReview(data))
 
