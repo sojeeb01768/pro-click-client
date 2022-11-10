@@ -1,24 +1,11 @@
 import React from 'react';
 import { FaRegTimesCircle } from "react-icons/fa";
 
-const MyReviewRow = ({ singleReview }) => {
+const MyReviewRow = ({ singleReview,handleDelete }) => {
 
     const { _id, serviceName, review, email, userName, image } = singleReview;
 
-    const handleDelete = (id) => {
-
-        const proceed = window.confirm('are you sure? ')
-        if (proceed) {
-            fetch(`http://localhost:5000/reviews/${_id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                })
-        }
-
-    }
+  
 
     return (
 

@@ -17,7 +17,7 @@ const Header = () => {
 
     const menuIitems = <>
         <li className='font-semibold'><Link to="/">Home</Link></li>
-        <li className='font-semibold'><Link to="allreviews">All review</Link></li>
+        {/* <li className='font-semibold'><Link to="allreviews">All review</Link></li> */}
         <li className='font-semibold'><Link to="blog">Blog</Link></li>
 
 
@@ -51,7 +51,8 @@ const Header = () => {
                 {
                     user?.uid ?
                         <>
-                            <span className='font-semibold'><Link to="myreview">My Review</Link></span>
+                            <span className='font-semibold'><Link to="addservice">Add Service</Link></span>
+                            <span className='font-semibold ml-2'><Link to="myreview">My Review</Link></span>
                             <span className='ml-2'>{user?.displayName}</span>
                             <button onClick={handleLogOut} className='btn ml-2'>Logout</button>
                         </>

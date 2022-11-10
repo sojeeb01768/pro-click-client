@@ -57,8 +57,17 @@ const Review = () => {
                     <p><span className='font-semibold text-blue-700'>Details:</span> {details}</p>
                 </div>
                 <div className='my-4'>
+                {
+                    user?.uid?
+                   <>
                     <textarea name='review' className="textarea textarea-secondary h-24 w-full mb-4" placeholder="Your Review" required></textarea>
-                    <input className='btn btn-outline btn-success mb-5' type="submit" value="comment" />
+                <input className='btn btn-outline btn-success mb-5' type="submit" value="comment" />
+                   </>
+                   :
+                   <>
+                   <h2 className='text-4xl font-semibold text-center'>Please login first</h2>
+                   </>
+                }
 
 
 
