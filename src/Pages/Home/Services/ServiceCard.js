@@ -8,28 +8,33 @@ const ServiceCard = ({ service }) => {
     return (
         <div className="card w-100 m-10 bg-base-100 shadow-xl">
 
-            <PhotoProvider>
-                <PhotoView src={image}>
-                    <img className='w-full rounded-xl' src={image} alt="" />
-                </PhotoView>
-            </PhotoProvider>
+            <div>
+                <PhotoProvider>
+                    <PhotoView src={image}>
+                        <img className='w-full rounded-xl' src={image} alt="" />
+                    </PhotoView>
+                </PhotoProvider>
 
-            {/* <figure><img ='w-5/6 rounded-xl' src={image} alt="" /></figure> */}
-            <div className="card-body">
-                <h2 className="text-4xl font-semibold">{service_name}</h2>
-                <p className='font-semibold'>Price: ${price}</p>
-                <p className=''>Rating: {rating}</p>
-                <div>
-                    {
+                {/* <figure><img ='w-5/6 rounded-xl' src={image} alt="" /></figure> */}
+                <div className="card-body">
+                    <h2 className="text-4xl font-semibold">{service_name}</h2>
+                    <p className='font-semibold'>Price: ${price}</p>
+                    <p className=''>Rating: {rating}</p>
+                    <div>
+                        {
 
-                        details.length > 100 ?
-                            <p>{details.slice(0, 100) + '...'} <Link className='text-blue-600 font-semibold' to={`/servicedetails/${_id}`}>See Details</Link></p>
-                            :
-                            <p>{details}</p>
-                    }
+                            details.length > 100 ?
+                                <p>{details.slice(0, 100) + '...'} <Link className='text-blue-600 font-semibold' to={`/servicedetails/${_id}`}>See Details</Link></p>
+                                :
+                                <p>{details}</p>
+                        }
+                    </div>
+
                 </div>
-
             </div>
+
+            
+
         </div>
     );
 };
