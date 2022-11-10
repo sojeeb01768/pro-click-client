@@ -20,6 +20,7 @@ const Header = () => {
         <li className='font-semibold'><Link to="allreviews">All review</Link></li>
         <li className='font-semibold'><Link to="blog">Blog</Link></li>
 
+
     </>
 
     return (
@@ -35,6 +36,7 @@ const Header = () => {
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">
                     <img className='w-12 rounded-full' src={logo} alt="" />
+                    <span className='text-3xl ml-2'>ProClick</span>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -49,6 +51,7 @@ const Header = () => {
                 {
                     user?.uid ?
                         <>
+                            <span className='font-semibold'><Link to="myreview">My Review</Link></span>
                             <span className='ml-2'>{user?.displayName}</span>
                             <button onClick={handleLogOut} className='btn ml-2'>Logout</button>
                         </>

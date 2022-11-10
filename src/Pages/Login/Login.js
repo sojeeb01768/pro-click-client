@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { FaGoogle , FaGithub} from "react-icons/fa";
-import { GoogleAuthProvider } from 'firebase/auth';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
     const navigate = useNavigate();
 
-    const { logIn, providerPopUpLogin } = useContext(AuthContext);
+    const { logIn, providerPopUpLogin, providerGithubLogin } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -27,8 +27,16 @@ const Login = () => {
 
     }
 
-    const handleGithubSignIn = ()=>{
-        
+    const githubProvider = new GithubAuthProvider()
+
+    const handleGithubSignIn = () => {
+        providerGithubLogin(githubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate('/')
+            })
+            .catch(err => console.error(err))
     }
 
     const googleProvider = new GoogleAuthProvider()

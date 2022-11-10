@@ -1,31 +1,53 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import ReviewCard from './ReviewCard';
+
+import ReviewRow from './ReviewRow';
 
 const AllUserReviews = () => {
-    const { user } = useContext(AuthContext)
-    // console.log(user);
-    const [allReview, setAllReview] = useState({})
+    const services = useLoaderData();
+    const { service } = services
+    const { user } = useContext(AuthContext);
 
-
+    const [allReview, setAllReview] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`http://localhost:5000/reviews?review=${service}`)
             .then(res => res.json())
             .then(data => setAllReview(data))
 
-    }, [user?.email])
+    }, [service])
+    // console.log(allReview);
 
     return (
         <div>
-            <h2>All review: {allReview.length}</h2>
-            {/* {
-                    allReview.map(review=> <ReviewCard
-                    key={review._id}
-                    review={review}
-                    ></ReviewCard>)
-                }
-     */}
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    {/* <!-- head --> */}
+                    <thead>
+                        <tr>
+                            <th>
+
+                            </th>
+                            <th>Name</th>
+                            <th>Comment</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            allReview.map(singleReview => <ReviewRow
+                                key={singleReview._id}
+                                singleReview={singleReview}
+                            ></ReviewRow>)
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

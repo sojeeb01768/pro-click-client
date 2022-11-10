@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import AllUserReviews from '../AllUserReviews/AllUserReviews';
 
 const Review = () => {
     const { _id, image, service_name, price, details, rating } = useLoaderData();
@@ -9,19 +10,16 @@ const Review = () => {
     const handleComment = event => {
         event.preventDefault();
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
-        const phone = form.phone.value;
-        const email = user?.email || 'Unregistered';
         const review = form.review.value;
 
         const commentReview = {
             service: _id,
             serviceName: service_name,
+            userName: user.displayName,
             price,
-            reviewer: name,
-            email,
-            phone,
-            review
+            email: user.email,
+            image: user.photoURL,
+            review: review
         }
 
 
@@ -44,6 +42,7 @@ const Review = () => {
 
     }
 
+
     return (
 
         <form onSubmit={handleComment}>
@@ -58,24 +57,17 @@ const Review = () => {
                     <p><span className='font-semibold text-blue-700'>Details:</span> {details}</p>
                 </div>
                 <div className='my-4'>
-                    <input name="firstName" type="text" placeholder="First Name" className="input input-bordered w-full my-4" />
-                    <input name="lastName" type="text" placeholder="Last Name" className="input input-bordered w-full mb-4" />
-                    <input name="phone" type="text" placeholder="Phone" className="input input-bordered w-full mb-4" required />
-                    <input name="email" type="text" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full mb-4" readOnly />
-
                     <textarea name='review' className="textarea textarea-secondary h-24 w-full mb-4" placeholder="Your Review" required></textarea>
-                    <input className='btn' type="submit" value="comment" />
+                    <input className='btn btn-outline btn-success mb-5' type="submit" value="comment" />
 
-                    <div className="card w-full bg-base-100 shadow-xl">
-                    <div className="card-body">
-                        <h2 className="card-title">hi</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        
+
+
+                    <div>
+                        <AllUserReviews></AllUserReviews>
                     </div>
                 </div>
-                </div>
 
-                
+
 
 
             </div>

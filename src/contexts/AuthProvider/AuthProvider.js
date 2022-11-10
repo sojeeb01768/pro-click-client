@@ -11,28 +11,36 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const logIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
 
     }
 
-    const logOut = ()=>{
+    const logOut = () => {
+        setLoading(true);
         return signOut(auth)
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
+            setLoading(false);
         });
 
         return unsubscribe();
     }, [])
 
-    const providerPopUpLogin = (provider)=>{
+    const providerPopUpLogin = (provider) => {
         return signInWithPopup(auth, provider);
+    }
+
+    const providerGithubLogin = (provider) => {
+        return signInWithPopup(auth, provider)
     }
 
     const authInfo = {
@@ -41,7 +49,8 @@ const AuthProvider = ({ children }) => {
         createUser,
         logIn,
         providerPopUpLogin,
-        logOut
+        logOut,
+        providerGithubLogin
     }
     return (
         <AuthContext.Provider value={authInfo}>
