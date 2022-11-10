@@ -3,13 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
     const navigate = useNavigate();
 
     const { logIn, providerPopUpLogin, providerGithubLogin } = useContext(AuthContext);
-
+    useTitle('Login')
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;

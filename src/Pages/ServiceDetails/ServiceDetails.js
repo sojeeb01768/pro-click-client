@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetails = () => {
 
+    useTitle('Service details')
     const { _id, service_name, price, details, image, rating } = useLoaderData();
 
 

@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../../hooks/useTitle';
 
 const AllServiceCardView = ({ single }) => {
 
+    useTitle('All service')
     const { image, price, service_name, _id, rating, details } = single;
     return (
         <div className="card w-100 m-10 bg-base-100 shadow-xl">
