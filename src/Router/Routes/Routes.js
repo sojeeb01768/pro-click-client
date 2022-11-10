@@ -33,15 +33,15 @@ const router = createBrowserRouter([
       {
         path: '/review/:id',
         element: <Review></Review>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://sports-photography-server-sojeeb01768.vercel.app/services/${params.id}`)
       },
       {
         path: '/servicedetails/:id',
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`https://sports-photography-server-sojeeb01768.vercel.app/services/${params.id}`)
 
       },
-      
+
       {
         path: '/blog',
         element: <Blog></Blog>
@@ -51,12 +51,12 @@ const router = createBrowserRouter([
         element: <AllServices></AllServices>
       },
       {
-        path:'/myreview',
-        element:<MyReview></MyReview>
+        path: '/myreview',
+        element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
       },
       {
-        path:'addservice',
-        element:<AddService></AddService>
+        path: 'addservice',
+        element: <PrivateRoute><AddService></AddService></PrivateRoute>
       }
 
     ]

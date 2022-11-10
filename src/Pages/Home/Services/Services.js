@@ -9,7 +9,7 @@ const Services = () => {
     useTitle('home');
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://sports-photography-server-sojeeb01768.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
@@ -30,9 +30,9 @@ const Services = () => {
             <div className='text-center'>
 
                 <Link to='allservice'>
-                     <button className='btn btn-primary my-5'>See More</button>
-                     
-                     </Link>
+                    <button className='btn btn-primary my-5'>See More</button>
+
+                </Link>
             </div>
         </div>
     );

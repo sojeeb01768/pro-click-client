@@ -12,7 +12,7 @@ const AllUserReviews = () => {
     const [allReview, setAllReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?review=${service}`)
+        fetch(`https://sports-photography-server-sojeeb01768.vercel.app/reviews?review=${service}`)
             .then(res => res.json())
             .then(data => setAllReview(data))
 

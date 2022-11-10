@@ -12,7 +12,7 @@ const MyReview = () => {
     const [myReview, setMyReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://sports-photography-server-sojeeb01768.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyReview(data))
 
@@ -23,7 +23,7 @@ const MyReview = () => {
 
         const proceed = window.confirm('are you sure? ')
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://sports-photography-server-sojeeb01768.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

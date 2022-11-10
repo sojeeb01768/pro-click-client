@@ -5,7 +5,7 @@ const AllServices = () => {
     const [allServices, setAllServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/all')
+        fetch('https://sports-photography-server-sojeeb01768.vercel.app/all')
             .then(res => res.json())
             .then(data => setAllServices(data))
     }, [])
@@ -17,9 +17,9 @@ const AllServices = () => {
             <div className='grid grid-cols-1  lg:grid-cols-3 gap-6'>
 
                 {
-                    allServices.map(single=><AllServiceCardView
-                    key={single._id}
-                    single={single}
+                    allServices.map(single => <AllServiceCardView
+                        key={single._id}
+                        single={single}
                     ></AllServiceCardView>)
                 }
             </div>

@@ -2,15 +2,15 @@
 <p>Email: sojeebahmed.sa@gmail.com</p>
 
 <h5>GITHUB SERVER REPO LINK:
- 
+ https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-sojeeb01768
 </h5>
 
 <h5>GITHUB CLIENT REPO LINK: 
-
+https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-sojeeb01768
 </h5>
 
 <h5>FireBase Live LINK: 
-
+https://sport-photography-7e35e.web.app/
 </h5>
 
 

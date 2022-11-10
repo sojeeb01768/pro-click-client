@@ -7,7 +7,7 @@ const ReviewRow = ({ singleReview }) => {
     // const [reviewService, setReviewSeervice] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/reviews?service=${service}`)
+    //     fetch(`https://sports-photography-server-sojeeb01768.vercel.app/reviews?service=${service}`)
     //         .then(res => res.json())
     //         .then(data => setReviewSeervice(data));
 
@@ -16,7 +16,7 @@ const ReviewRow = ({ singleReview }) => {
     // const handleDelete = (_id) => {
     //     const proceed = window.confirm('Are you sure ?');
     //     if (proceed) {
-    //         fetch(`http://localhost:5000/reviews/${_id}`,{
+    //         fetch(`https://sports-photography-server-sojeeb01768.vercel.app/reviews/${_id}`,{
     //             method:'DELETE'
     //         })
     //         .then(res=>res.json())
@@ -29,7 +29,7 @@ const ReviewRow = ({ singleReview }) => {
     return (
         <tr>
             <th>
-                
+
             </th>
             <td>
                 <div className="flex items-center space-x-3">
